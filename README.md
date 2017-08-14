@@ -25,19 +25,15 @@ $ docker run -it nuest/renjin /bin/bash
 # renjin
 
 > library("dplyr")
-
-# based on https://rpubs.com/davoodastaraky/mtRegression
 > mtcars$amfactor <- factor(mtcars$am, labels = c("automatic", "manual"))
 > summary(lm(mpg ~ factor(amfactor), data = mtcars))$coef
-
-                                Estimate        Std. Error           t value          Pr(>|t|)
-           (Intercept) 17.14736842105263  1.12460254124398 15.24749215139154                 0
-factor(amfactor)manual  7.24493927125506   1.7644216316428  4.10612698310069  0.00028502074394
 > quit()
 
 # ls /root/.m2/repository/org/renjin/cran/
 # exit
 ```
+
+(Demo code based on based https://rpubs.com/davoodastaraky/mtRegression.)
 
 ## Local build
 
