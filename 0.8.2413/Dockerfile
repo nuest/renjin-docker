@@ -15,6 +15,9 @@ RUN apt-get update \
 RUN dpkg -i renjin-debian-package-$RENJIN_VERSION.deb
 
 # Add image metadata
+ARG VCS_URL
+ARG VCS_REF
+ARG BUILD_DATE
 LABEL org.label-schema.license="https://github.com/bedatadriven/renjin/blob/master/LICENSE.txt" \
     org.label-schema.vendor="BeDataDriven, Dockerfile provided by Daniel Nüst" \
 	org.label-schema.name="Renjin" \
