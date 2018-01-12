@@ -1,8 +1,8 @@
 # renjin-docker
 
-Dockerfiles for automatic builds on Docker Hub for Renjin, an interpreter for R built on the Java Virtual Machine.
+ [![](https://images.microbadger.com/badges/image/nuest/renjin.svg)](https://microbadger.com/images/nuest/renjin "Get your own image badge on microbadger.com") [![Docker Automated build](https://img.shields.io/docker/automated/nuest/renjin.svg)]()
 
-For more information on **Renjin**, please visit http://www.renjin.org.
+Dockerfiles for automatic builds on Docker Hub for **[Renjin]()**, an interpreter for [R]() built on the [Java Virtual Machine]().
 
 Images on Docker Hub: [https://hub.docker.com/r/nuest/renjin](https://hub.docker.com/r/nuest/renjin)
 
@@ -40,7 +40,8 @@ $ docker run -it nuest/renjin /bin/bash
 Go into the version directory, then:
 
 ```bash
-docker run --tag renjin .
+docker build --tag renjin .
+docker run -it renjin
 ```
 
 ## License
