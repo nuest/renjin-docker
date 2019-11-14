@@ -56,6 +56,11 @@ docker pull -a nuest/renjin
 docker images | grep nuest/renjin
 ```
 
+## Code of Conduct
+
+Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md) (file `CODE_OF_CONDUCT.md`).
+By participating in this project you agree to abide by its terms.
+
 ## License
 
 Renjin is available under the GPLv2 (or higher) license, see LICENSE for the full text of the license.
