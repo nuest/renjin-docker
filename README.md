@@ -44,6 +44,18 @@ docker build --tag renjin .
 docker run -it renjin
 ```
 
+## Versions
+
+Different Renjin versions are supported as tags.
+The most recent version is taken from the [Renjin Nexus](https://nexus.bedatadriven.com/#view-repositories;public~browsestorage~org.renjin), see `org.renjin.renjin-debian-package`.
+You can pull all tags to your local machine to get a list of available versions:
+
+
+```bash
+docker pull -a nuest/renjin
+docker images | grep nuest/renjin
+```
+
 ## License
 
 Renjin is available under the GPLv2 (or higher) license, see LICENSE for the full text of the license.
