@@ -56,6 +56,18 @@ docker pull -a nuest/renjin
 docker images | grep nuest/renjin
 ```
 
+## Install from APT
+
+As described here: https://github.com/bedatadriven/renjin/#debian-and-ubuntu
+
+See `0.9.2725-apt/Dockerfile`
+
+Fails:
+
+```
+E: Failed to fetch http://packages.renjin.org/repo/apt/pool/renjin-0.9.2725.deb  500  Internal Server Error
+```
+
 ## Code of Conduct
 
 Please note that this project is released with a [Contributor Code of Conduct](CODE_OF_CONDUCT.md) (file `CODE_OF_CONDUCT.md`).
