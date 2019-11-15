@@ -1,18 +1,18 @@
-FROM java:openjdk-8
+FROM openjdk:11-jdk-slim-buster
 
-ENV RENJIN_VERSION=0.8.2413
+ARG RENJIN_VERSION=${RENJIN_VERSION:-0.8.2413}
+ENV RENJIN_VERSION=${RENJIN_VERSION}
 
-# Install requirements and download & install .deb packge for Renjin
-WORKDIR /tmp
-RUN apt-get update \
-	&& apt-get install -y --no-install-recommends \
-		ca-certificates \
+RUN apt-get update && \
+  apt-get install -y --no-install-recommends \
         curl \
-        # Renjin requirements which are not resolved automatically:
-        libblas3 \
-        java-wrappers \
-    && curl -LO -# https://nexus.bedatadriven.com/service/local/repositories/renjin-release/content/org/renjin/renjin-debian-package/$RENJIN_VERSION/renjin-debian-package-$RENJIN_VERSION.deb
-RUN dpkg -i renjin-debian-package-$RENJIN_VERSION.deb
+        unzip
+
+WORKDIR /opt
+RUN curl -L -o renjin.zip -# "https://nexus.bedatadriven.com/service/local/artifact/maven/redirect?r=renjin-release&g=org.renjin&a=renjin-generic-package&v=${RENJIN_VERSION}&e=zip" && \
+  unzip renjin.zip && \
+  rm renjin.zip
+ENV PATH /opt/renjin-$RENJIN_VERSION/bin:$PATH
 
 # Add image metadata
 ARG VCS_URL
