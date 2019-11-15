@@ -47,7 +47,7 @@ docker run -it renjin
 ## Versions
 
 Different Renjin versions are supported as tags.
-The most recent version is taken from the [Renjin Nexus](https://nexus.bedatadriven.com/#view-repositories;public~browsestorage~org.renjin), see `org.renjin.renjin-debian-package`.
+The most recent version is taken from the [Renjin Nexus](https://nexus.bedatadriven.com/#view-repositories;public~browsestorage~org/renjin/), see `org.renjin.renjin-debian-package`.
 You can pull all tags to your local machine to get a list of available versions:
 
 
@@ -56,17 +56,16 @@ docker pull -a nuest/renjin
 docker images | grep nuest/renjin
 ```
 
-## Install from APT
-
-As described here: https://github.com/bedatadriven/renjin/#debian-and-ubuntu
-
-See `0.9.2725-apt/Dockerfile`
-
-Fails:
+## Building geospatial packages in a container
 
 ```
-E: Failed to fetch http://packages.renjin.org/repo/apt/pool/renjin-0.9.2725.deb  500  Internal Server Error
+renjin-docker/0.9.2726$ docker build --tag renjin:builder --file Dockerfile.builder .
+
+renjin-docker/packages$ docker build --tag renjin:geospatial .
 ```
+
+- `units`
+  - needs `libudunits2-dev`
 
 ## Code of Conduct
 
